@@ -47,6 +47,20 @@ mixin _$ApiController on _ApiController, Store {
     return _$getDataAsyncAction.run(() => super.getData());
   }
 
+  late final _$_ApiControllerActionController =
+      ActionController(name: '_ApiController', context: context);
+
+  @override
+  dynamic searchTitle(String title) {
+    final _$actionInfo = _$_ApiControllerActionController.startAction(
+        name: '_ApiController.searchTitle');
+    try {
+      return super.searchTitle(title);
+    } finally {
+      _$_ApiControllerActionController.endAction(_$actionInfo);
+    }
+  }
+
   @override
   String toString() {
     return '''
